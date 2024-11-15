@@ -1,0 +1,27 @@
+﻿<Window x:Class="MasterPol.MVVM.Views.MainView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:viewModels="clr-namespace:MasterPol.MVVM.ViewModels"
+        mc:Ignorable="d"
+        Title="MainView" Height="500" Width="900" ResizeMode="NoResize">
+
+    <Window.DataContext>
+        <viewModels:MainViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5">
+            <Button Content="Партнеры" FontFamily="Segoe UI" Margin="2" Height="35" Command="{Binding ShowHomeViewCommand}" Background=" #67BA80"/>
+            <Button Content="Материалы" FontFamily="Segoe UI" Margin="2" Height="35" Command="{Binding ShowMaterialsCalculatorViewCommand}" Background=" #67BA80"/>
+        </StackPanel>
+
+        <Frame Margin="5"  Grid.Column="1" Content="{Binding CurrentView}"/>
+    </Grid>
+</Window>

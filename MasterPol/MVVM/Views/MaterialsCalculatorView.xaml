@@ -1,0 +1,59 @@
+﻿<UserControl x:Class="MasterPol.MVVM.Views.MaterialsCalculatorView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:viewModels="clr-namespace:MasterPol.MVVM.ViewModels"
+             xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+             mc:Ignorable="d"
+             d:DesignHeight="300" d:DesignWidth="300"
+             d:DataContext="{d:DesignInstance Type=viewModels:MaterialsCalculatorViewModel}">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+            <RowDefinition Height="auto" />
+        </Grid.RowDefinitions>
+
+        <TextBlock Grid.Row="0" FontSize="25" Text="КАЛЬКУЛЯТОР МАТЕРИАЛОВ" HorizontalAlignment="Center" VerticalAlignment="Center"
+                   Margin="5" />
+
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
+
+            <Grid.RowDefinitions>
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+
+            <TextBlock Grid.Row="0" Grid.Column="0" Text="Необходимая продукция" Margin="5" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+            <ComboBox Grid.Row="1" Grid.Column="0" ItemsSource="{Binding ProductTypes}"
+                      SelectedItem="{Binding SelectedProductType}" Margin="5" VerticalAlignment="Center"
+                      DisplayMemberPath="Name" FontFamily="Segoe UI"/>
+
+            <TextBlock Grid.Row="0" Grid.Column="1" Text="Материал" Margin="5" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+            <ComboBox Grid.Row="1" Grid.Column="1" ItemsSource="{Binding MaterialTypes}"
+                      SelectedItem="{Binding SelectedMaterialType}" Margin="5" VerticalAlignment="Center"
+                      DisplayMemberPath="Name" FontFamily="Segoe UI"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="0" Text="Количество необходимой продукции" Margin="5"
+                       VerticalAlignment="Center" TextWrapping="WrapWithOverflow" FontFamily="Segoe UI"/>
+            <xctk:IntegerUpDown Minimum="0" Grid.Row="3" Grid.Column="0" Margin="5" VerticalAlignment="Center" FontFamily="Segoe UI"/>
+
+            <TextBlock Grid.Row="2" Grid.Column="1" Text="Количество необходимого материала" Margin="5"
+                       VerticalAlignment="Center" TextWrapping="WrapWithOverflow" FontFamily="Segoe UI"/>
+            <TextBox Grid.Row="3" Grid.Column="1" Text="{Binding CountOfNeedMaterial}" Margin="5"
+                     VerticalAlignment="Center" IsEnabled="False" FontFamily="Segoe UI"/>
+        </Grid>
+
+        <Button Grid.Row="2" Content="Рассчитать" Width="100" Margin="5"
+                Command="{Binding CalculateNeedMaterialsCommand}" FontFamily="Segoe UI" Background=" #67BA80"/>
+    </Grid>
+</UserControl>
