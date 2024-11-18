@@ -8,20 +8,22 @@
         Title="MainView" Height="500" Width="900" ResizeMode="NoResize">
 
     <Window.DataContext>
-        <viewModels:MainViewModel/>
+        <viewModels:MainViewModel />
     </Window.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="Auto"/>
-            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="Auto" />
+            <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
         <StackPanel Grid.Column="0" Orientation="Vertical" Margin="5">
-            <Button Content="Партнеры" FontFamily="Segoe UI" Margin="2" Height="35" Command="{Binding ShowHomeViewCommand}" Background=" #67BA80"/>
-            <Button Content="Материалы" FontFamily="Segoe UI" Margin="2" Height="35" Command="{Binding ShowMaterialsCalculatorViewCommand}" Background=" #67BA80"/>
+            <Button Content="Партнеры" FontFamily="Segoe UI" Margin="2" Height="35"
+                    Command="{Binding ShowHomeViewCommand}" Background=" #67BA80" />
+            <Button Content="Материалы" FontFamily="Segoe UI" Margin="2" Height="35"
+                    Command="{Binding ShowMaterialsCalculatorViewCommand}" Background=" #67BA80" />
         </StackPanel>
 
-        <Frame Margin="5"  Grid.Column="1" Content="{Binding CurrentView}"/>
+        <Frame Margin="5" Grid.Column="1" Content="{Binding CurrentView}" />
     </Grid>
 </Window>

@@ -6,6 +6,7 @@
         <Nullable>enable</Nullable>
         <ImplicitUsings>enable</ImplicitUsings>
         <UseWPF>true</UseWPF>
+        <ApplicationIcon>Resources\Мастер пол.ico</ApplicationIcon>
     </PropertyGroup>
 
     <ItemGroup>
@@ -27,6 +28,17 @@
         <PackageReference Include="CommunityToolkit.Mvvm">
             <Version>8.3.2</Version>
         </PackageReference>
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Resources\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Remove="Resources\Мастер пол.png" />
+      <Resource Include="Resources\Мастер пол.png">
+        <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      </Resource>
     </ItemGroup>
     
 </Project>

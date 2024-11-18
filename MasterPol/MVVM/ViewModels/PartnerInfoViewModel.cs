@@ -144,7 +144,7 @@ public partial class PartnerInfoViewModel():ObservableObject
         var app = Application.Current as App;
 
         // Переход на домашнюю страницу
-        app?.SetCurrentView(new HomeView());
+        app?.SetCurrentView(new PartnerListView());
     }
 
     [RelayCommand]

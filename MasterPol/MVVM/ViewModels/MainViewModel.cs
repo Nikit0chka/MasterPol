@@ -16,7 +16,7 @@ public partial class MainViewModel:ObservableObject
     /// Логика отображения домашней страницы
     /// </summary>
     [RelayCommand]
-    private void ShowHomeView() => CurrentView = new HomeView();
+    private void ShowHomeView() => CurrentView = new PartnerListView();
 
     /// <summary>
     /// Логика отображения страницы подсчета материалов

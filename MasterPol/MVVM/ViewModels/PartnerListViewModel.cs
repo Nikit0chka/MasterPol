@@ -9,7 +9,7 @@ using MasterPol.Repositories;
 
 namespace MasterPol.MVVM.ViewModels;
 
-public partial class HomeViewModel:ObservableObject
+public partial class PartnerListViewModel:ObservableObject
 {
     /// <summary>
     /// Коллекция партнеров для вывода в ListView
